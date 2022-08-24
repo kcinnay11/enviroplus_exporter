@@ -55,20 +55,15 @@ sudo systemctl status enviroplus-exporter
 If the service is running correctly, the output should resemble the following:
 
 ```
-pi@raspberrypi:/home/pi/enviroplus_exporter $ sudo systemctl status enviroplus-exporter
+pi@enviroplus:~ $ sudo systemctl status enviroplus-exporter
 ● enviroplus-exporter.service - Enviroplus-exporter service
-   Loaded: loaded (/etc/systemd/system/enviroplus-exporter.service; disabled; vendor preset: enabled)
-   Active: active (running) since Fri 2020-01-17 14:13:41 CET; 5s ago
- Main PID: 30373 (python)
-    Tasks: 2 (limit: 4915)
-   Memory: 6.0M
-   CGroup: /system.slice/enviroplus-exporter.service
-           └─30373 /usr/bin/python /home/pi/enviroplus_exporter/enviroplus_exporter.py --bind=0.0.0.0 --port=8000 --influxdb=true --factor="2.4"
-
-Jan 17 14:13:41 wall-e systemd[1]: Started Enviroplus-exporter service.
-Jan 17 14:13:41 wall-e python[30373]: 2020-01-17 14:13:41.565 INFO     enviroplus_exporter.py - Expose readings from the Enviro+ sensor by Pimoroni in Prometheus format
-Jan 17 14:13:41 wall-e python[30373]: Press Ctrl+C to exit!
-Jan 17 14:13:41 wall-e python[30373]: 2020-01-17 14:13:41.581 INFO     Listening on http://0.0.0.0:8000
+     Loaded: loaded (/etc/systemd/system/enviroplus-exporter.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2022-08-24 15:05:54 CEST; 1h 50min ago
+   Main PID: 788 (python3)
+      Tasks: 3 (limit: 191)
+        CPU: 39.378s
+     CGroup: /system.slice/enviroplus-exporter.service
+             └─788 python3 /home/pi/enviroplus_exporter/enviroplus_exporter.py --bind=0.0.0.0 --port=8000 --influxdb=true --factor=2.4
 ```
 
 6.Enable at boot time
